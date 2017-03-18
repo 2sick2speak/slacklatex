@@ -4,6 +4,7 @@ RUN apt-get update -y
 RUN apt-get install -y python3.4
 RUN apt-get install -y python3-pip
 RUN apt-get install -y texlive imagemagick
+RUN apt-get install -y texlive-latex-extra
 RUN mkdir /app
 COPY . /app
 WORKDIR /app
