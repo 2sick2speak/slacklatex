@@ -1,0 +1,23 @@
+---
+# base docker-compose configuration
+version: '2'
+
+networks:
+  infranginx_default:
+    external: true
+
+services:
+  web:
+    build:
+      context: .
+    hostname: "slack-latex"
+    networks:
+      infranginx_default:
+        aliases:
+          - "slack-latex"
+    volumes:
+       - .:/app
+    environment:
+      DEBUG: 'off'
+
+    restart: unless-stopped
