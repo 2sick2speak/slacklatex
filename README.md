@@ -62,7 +62,17 @@ Copy the verification token from Integration Settings -> Token into
 Start up your server:
 
 ```bash
-python3 main.py
+python3 run.py
 ```
 
 Then, try testing out your shiny new slash command.
+
+### Launch with docker
+
+```bash
+docker-compose build
+docker-compose up -d
+```
+
+__N.B. docker-compose file tied to local network called__ ``infranginx_default``__. It need to be adapted to your infrastructure__
+
