@@ -45,4 +45,5 @@ def str2png(input_string, work_dir):
     with open(os.path.join(work_dir, 'out.tex'),'w') as f:
         f.write(out_txt)
     subprocess.check_call(['pdflatex', '-halt-on-error', 'out.tex'], cwd=work_dir, stdout=None, stderr=None)
-    subprocess.check_call(['convert', '-density', '300', 'out.pdf', '-quality', '100', '-resize', '50%', '-sharpen', '0x1.0', 'out.png'], cwd=work_dir, stdout=None, stderr=None)
+    subprocess.check_call(['convert', '-density', '300', 'out.pdf',
+        '-quality', '100', '-resize', '50%', '-sharpen', '0x1.0', '-background', 'white', '-alpha', 'remove', 'out.png'], cwd=work_dir, stdout=None, stderr=None)
